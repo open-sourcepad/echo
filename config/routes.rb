@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post 'sign_out' => 'users#signout'
 
         resource :question, only: [:show]
+        resource :feedback, only: [:create]
       end
     end
   end
