@@ -20,7 +20,7 @@ class Answer < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  before_save :increment_position
+  before_create :increment_position
 
   belongs_to :question
 
@@ -33,7 +33,7 @@ class Answer < ActiveRecord::Base
   private
 
   def increment_position
-    self.position = question.answers.size
+    #self.position = question.present? ? question.answers.size : 0
   end
 
   def only_attributes

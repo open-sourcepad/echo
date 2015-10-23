@@ -7,6 +7,7 @@
 #  description :text             default(""), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  active      :boolean          default(FALSE)
 #
 
 require 'test_helper'

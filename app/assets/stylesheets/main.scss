@@ -1,22 +1,51 @@
-.main {
-  .sidebar {
-    background-color: $dark;
-    position: fixed;
- 	  z-index: 10;
-	  left: 0;
-	  top: 0;
-	  height: 100%;
-    color: #fff;
+.sidebar {
+  background-color: $dark;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  ul {
+    li {
+      padding: 10px;
+    }
   }
   .logo {
     margin: 0;
+    margin-top: 10px;
     img {
-      width: 100px;
+      width: 70%;
       color: $yellow;
     }
   }
-
-  path {
-    fill: #fff;
+  a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
   }
+  
+  .active {
+    background-color: $yellow;
+    color: $dark;
+    a {
+      color: $dark;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+.main {
+  margin-left: 115px;
+  margin-top: 5px;  
+}
+.answer-group {
+  margin-bottom: 5px !important;
+}
+
+.upload-image {
+  padding: 13px !important;
 }

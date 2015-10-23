@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
     end
   end
 
-  def dashboard
+  def summary
 
   end
 end

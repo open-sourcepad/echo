@@ -1,0 +1,35 @@
+.row
+  .col-md-12.text-center
+    h2 Create Question
+.row
+  .col-md-6.col-md-offset-3
+    = form_for @question do |f|
+      .form-group
+        = f.text_field :description, class: 'form-control input-lg', placeholder: 'Question'
+      .form-group
+        = f.label :answers, 'Possible Answer'
+        .answer-list
+          = f.fields_for :answers do |b|
+            .form-group.answer-group
+              .col-md-8.no-padding
+                = b.text_field :description, class: 'form-control input-lg', placeholder: 'Answer'
+              .col-md-3.no-padding-right
+                = link_to 'Upload Image', 'javascript:void(0)', class: 'btn btn-default input-lg upload-image'
+                = b.file_field :image, class: 'hidden'
+              .col-md-1.padding
+              .clearfix
+
+      .form-group.answer-button
+        = link_to 'Add Answer', add_answer_questions_path, class: 'btn', remote: true
+
+
+      = f.submit "Save", class: 'btn'
+
+
+
+
+
+
+
+
+

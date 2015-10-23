@@ -8,7 +8,12 @@ html
     = csrf_meta_tags
   body
     .container-fluid
-      = yield
+      .row.main
+        .col-md-2.sidebar
+          = render partial: 'application/sidebar'
+        .col-md-10.main
+          .container
+            = yield
 
 
 

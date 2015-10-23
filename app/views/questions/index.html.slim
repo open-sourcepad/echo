@@ -1,0 +1,27 @@
+.row
+  .col-md-2
+    h2 Questions
+  .col-md-2
+    = link_to 'Add Question', new_question_path
+.row
+  .col-md-12
+    table
+      tbody
+        - @questions.each do |question|
+          tr
+            td= question.description
+            td
+              = link_to 'Show', question_path(question)
+            td
+              - if question.active?
+                | Active
+              - else
+                = link_to 'Set as Active', '#'
+
+
+
+
+
+
+
+
