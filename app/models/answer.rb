@@ -31,6 +31,22 @@ class Answer < ActiveRecord::Base
     end
   end
 
+  def question_feedback_count
+    question.feedback_count
+  end
+
+  def feedback_percentage
+    if feedback_count > 0
+      (feedback_count/question_feedback_count)*100
+    else
+      '0%'.to_s
+    end
+  end
+
+  def feedback_count
+    feedbacks.count
+  end
+
   private
 
   def increment_position
