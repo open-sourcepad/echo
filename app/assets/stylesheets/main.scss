@@ -1,0 +1,22 @@
+.main {
+  .sidebar {
+    background-color: $dark;
+    position: fixed;
+ 	  z-index: 10;
+	  left: 0;
+	  top: 0;
+	  height: 100%;
+    color: #fff;
+  }
+  .logo {
+    margin: 0;
+    img {
+      width: 100px;
+      color: $yellow;
+    }
+  }
+
+  path {
+    fill: #fff;
+  }
+}

@@ -5,6 +5,19 @@ class ApplicationController < ActionController::Base
   
   layout :layout_by_resource
 
+  def after_sign_in_path_for(resource)
+    sign_in_url = new_user_session_url
+    if request.referer == sign_in_url
+      super
+    else
+      dashboard_path(resource) || request.referer || root_path
+    end
+  end
+
+  def after_sign_up_path_for(resource)
+    dashboard_path(resource) || request.referer || root_path
+  end
+  
   protected
 
   def layout_by_resource
