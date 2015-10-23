@@ -1,4 +1,4 @@
-$('.answer-list').append("<%= j render partial: 'answer_fields', locals: {b: @answer} %>")
+$('.answers-list').append("<%= j render partial: 'answer_fields', locals: {b: @answer} %>")
 
 if ($('.answer-group').length >= 3) {
   $('.answer-button').addClass('hidden')
