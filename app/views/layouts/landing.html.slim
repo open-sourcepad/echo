@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title echo
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .container-fluid
+      .row.logo
+        .col-md-4.col-sm-4.col-md-offset-4.col-sm-offset-4.text-center
+          = image_tag 'echo_logo.svg'
+      = yield
+
+

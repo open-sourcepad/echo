@@ -1,0 +1,20 @@
+.logo {
+  margin-top: 130px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  margin: 10px 0 !important;
+  background-color: #332b10;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  &:hover, &:active, &:focus, &:visited {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.form-control {
+  border-radius: 0 !important;
+}

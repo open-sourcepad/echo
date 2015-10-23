@@ -1,5 +1,6 @@
-class WelcomeController < ActionController::Base
+class WelcomeController < ApplicationController
+  layout 'landing'
+  
   def index
-    
   end
 end
