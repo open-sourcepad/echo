@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, only: [:show, :add_answer, :set_default]
+  before_action :set_question, only: [:show, :set_default]
   def index
     @questions = Question.all.order(:created_at)
   end
@@ -28,7 +28,6 @@ class QuestionsController < ApplicationController
   end
 
   def add_answer
-    @answer = @question.answers.build
   end
 
   def remove_answer
