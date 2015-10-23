@@ -53,3 +53,22 @@
 .remove-answer {
   color: $dark;
 }
+
+
+.questions-list {
+  .entry {
+    padding: 10px;
+    margin: 5px;
+    color: #fff;
+  }
+  .active {
+    background-color: $green;
+  }
+
+  .inactive {
+    background-color: $dark;
+  }
+  .capitalize {
+    text-transform: uppercase;
+  }
+}

@@ -26,7 +26,7 @@ class Answer < ActiveRecord::Base
 
   def image_url
     if image && image.url
-      image.url(:medium)
+      URI.join(ActionController::Base.asset_host, image.url(:medium)).to_s
     end
   end
 
