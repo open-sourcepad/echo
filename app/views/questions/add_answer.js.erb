@@ -4,6 +4,8 @@ if ($('.answer-group').length >= 3) {
   $('.answer-button').addClass('hidden')
 }
 
+$('.upload-image').unbind('click');
+
 $('.upload-image').on('click', function(e) {
   e.preventDefault();
   return $(this).next('input[type=file]').click();
