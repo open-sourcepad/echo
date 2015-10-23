@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_question, only: [:index, :create, :add_answer]
+  before_action :set_question, only: [:show, :add_answer, :set_default]
   def index
-    @questions = Question.all
+    @questions = Question.all.order(:created_at)
   end
   
   def new
@@ -11,7 +11,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
   end
   
   def create
@@ -36,15 +35,16 @@ class QuestionsController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
+  def set_default
+    Question.update_all(active: false)
+    @question.set_active
+    redirect_to questions_path
+  end
+
   private
 
     def set_question
-      if Question.first.present?
-        @question = Question.first
-      else
-        @question = Question.new
-        2.times { @question.answers.build }
-      end
+      @question = Question.find(params[:id])
     end
 
     def question_params

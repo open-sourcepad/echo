@@ -20,8 +20,8 @@ class Question < ActiveRecord::Base
   def set_active
     self.active = true
     self.save
-    
   end
+
   private
 
   def only_attributes

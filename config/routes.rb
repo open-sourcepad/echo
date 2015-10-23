@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'question' => 'questions#index'
   
   resources :questions do
+    member do
+      get 'set_default'
+    end
+    
     collection do
       get 'add_answer'
     end
