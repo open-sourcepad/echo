@@ -9,6 +9,6 @@ class WelcomeController < ApplicationController
   end
 
   def summary
-
+    @question = Question.active.first
   end
 end

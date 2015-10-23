@@ -17,10 +17,11 @@
 class Answer < ActiveRecord::Base
   include Concerns::AsJson
 
+  has_many :feedbacks
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  before_create :increment_position
+  after_create :increment_position
 
   belongs_to :question
 
@@ -33,7 +34,8 @@ class Answer < ActiveRecord::Base
   private
 
   def increment_position
-    #self.position = question.present? ? question.answers.size : 0
+    self.position = question.answers.size
+    self.save
   end
 
   def only_attributes

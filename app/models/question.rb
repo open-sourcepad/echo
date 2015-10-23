@@ -14,12 +14,22 @@ class Question < ActiveRecord::Base
   include Concerns::AsJson
 
   belongs_to :user
+  has_many :feedbacks
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers
-  
+  scope :active, -> {where(active: true)}
+
   def set_active
     self.active = true
     self.save
+  end
+
+  def last_response
+    feedbacks.any? ? feedbacks.order('created_at desc').first.created_at.strftime('%B %d, %Y') : nil
+  end
+
+  def feedback_count
+    feedbacks.count
   end
 
   private

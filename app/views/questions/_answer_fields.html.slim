@@ -1,9 +1,9 @@
 .form-group.answer-group
   .col-md-8.no-padding
-    = text_field_tag "answer[][description]", '', class: 'form-control input-lg', placeholder: 'Answer'
+    = text_field_tag "question[answers_attributes][#{@random_number}][description]", '', class: 'form-control input-lg', placeholder: 'Answer'
   .col-md-3.no-padding-right
     = button_tag 'Upload Image', class: 'btn btn-default input-lg'
-    = file_field_tag "answer[][image]", class: 'hidden'
+    = file_field_tag "question[answers_attributes][#{@random_number}][image]", class: 'hidden'
   .col-md-1
     = link_to '<i class="fa fa-times fa-3x"></i>'.html_safe, 'javascript:void(0)', class: 'remove-answer'
   .clearfix

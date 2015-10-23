@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
   end
 
   def add_answer
+    @random_number = Time.at(rand * Time.now.to_i).to_i.to_s
   end
 
   def remove_answer
