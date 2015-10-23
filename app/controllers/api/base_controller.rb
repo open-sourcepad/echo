@@ -13,6 +13,7 @@ class Api::BaseController < ApplicationController
 
     if user && Devise.secure_compare(user.authentication_token, params[:auth_token])
       sign_in user, store: false
+      render json: Api::Response.build(true, user), status: 200
     else
       render json: Api::Response.build(false, message: "error with your uid or auth_token"), status: 401
     end

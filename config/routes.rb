@@ -4,12 +4,9 @@ Rails.application.routes.draw do
   api vendor_string: "echo+hackathon", default_version: 1 do
     version 1 do
       cache as: 'v1' do
-        resources :users, only: [:destroy] do
-          collection do
-            post :sign_in
-            post :sign_up
-          end
-        end
+        post 'sign_in' => 'users#sign_in'
+        post 'sign_up' => 'users#sign_up'
+        delete 'sign_out' => 'users#sign_out'
       end
     end
   end
