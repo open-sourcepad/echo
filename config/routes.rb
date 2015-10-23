@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  api vendor_string: "echo+hackathon", default_version: 1 do
+  api vendor_string: "echo", default_version: 1 do
     version 1 do
       cache as: 'v1' do
         post 'sign_in' => 'users#sign_in'
