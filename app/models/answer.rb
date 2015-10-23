@@ -15,8 +15,24 @@
 #
 
 class Answer < ActiveRecord::Base
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :question
+
+  def image_url
+    if image && image.url
+      image.url(:medium)
+    end
+  end
+
+  private
+
+  def only_attributes
+    %w(id position question_id)
+  end
+
+  def methods_list
+    %w(image_url)
+  end
 end

@@ -12,4 +12,10 @@
 class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers
+
+  private
+
+  def only_attributes
+    %w(id description user_id)
+  end
 end
