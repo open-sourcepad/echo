@@ -16,10 +16,10 @@ class Api::Response
   end
 
   def merged_response
-    response = {success: success}
+    response = {}
     add_response response
     add_credentials response
-    {data: response}
+    {data: response, success: success}
   end
 
   class << self
