@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
+
 gem 'api-versions'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -40,6 +41,7 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development, :test do
+  gem 'annotate'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry'

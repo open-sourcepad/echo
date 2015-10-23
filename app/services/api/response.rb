@@ -19,7 +19,7 @@ class Api::Response
     response = {success: success}
     add_response response
     add_credentials response
-    response
+    {data: response}
   end
 
   class << self
