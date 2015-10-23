@@ -1,8 +1,8 @@
 .row
-  .col-md-12.text-center
+  .col-md-6
     h2 Create Question
 .row
-  .col-md-6.col-md-offset-3
+  .col-md-6
     = form_for @question do |f|
       .form-group
         = f.text_field :description, class: 'form-control input-lg', placeholder: 'Question'
@@ -16,14 +16,15 @@
               .col-md-3.no-padding-right
                 = link_to 'Upload Image', 'javascript:void(0)', class: 'btn btn-default input-lg upload-image'
                 = b.file_field :image, class: 'hidden'
-              .col-md-1.padding
+              .col-md-1
+                = link_to '<i class="fa fa-times fa-3x"></i>'.html_safe, 'javascript:void(0)', class: 'remove-answer'
               .clearfix
 
       .form-group.answer-button
         = link_to 'Add Answer', add_answer_questions_path, class: 'btn', remote: true
 
 
-      = f.submit "Save", class: 'btn'
+      = f.submit "Save", class: 'btn btn-block btn-lg'
 
 
 
