@@ -8,7 +8,7 @@
         = f.text_field :description, class: 'form-control input-lg', placeholder: 'Question'
       .form-group
         = f.label :answers, 'Possible Answer'
-        .answer-list
+        .answers-list
           = f.fields_for :answers do |b|
             .form-group.answer-group
               .col-md-8.no-padding
