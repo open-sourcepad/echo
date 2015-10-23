@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     api-versions (1.2.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -141,6 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   api-versions
   byebug
   devise (= 3.5.2)

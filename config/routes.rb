@@ -7,6 +7,8 @@ Rails.application.routes.draw do
         post 'sign_in' => 'users#sign_in'
         post 'sign_up' => 'users#sign_up'
         delete 'sign_out' => 'users#sign_out'
+
+        resources :question, :only
       end
     end
   end
