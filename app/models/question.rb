@@ -10,6 +10,8 @@
 #
 
 class Question < ActiveRecord::Base
+  include Concerns::AsJson
+  
   belongs_to :user
   has_many :answers
 
