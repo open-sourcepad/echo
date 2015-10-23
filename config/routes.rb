@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         post 'sign_up' => 'users#signup'
         post 'sign_out' => 'users#signout'
 
-        resources :question, :only
+        resource :question, only: [:show]
       end
     end
   end

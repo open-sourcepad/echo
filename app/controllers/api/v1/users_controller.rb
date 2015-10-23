@@ -21,7 +21,7 @@ class Api::V1::UsersController < Api::BaseController
       sign_in @user, store: false
       render json: Api::Response.build(true, @user), status: 200
     else
-      render json: Api::Response.build(false, errors: @user.errors.messages), status: 200
+      render json: Api::Response.build(false, errors: @user.errors.messages), status: 400
     end
   end
 
@@ -32,7 +32,7 @@ class Api::V1::UsersController < Api::BaseController
       sign_out @user
       render json: Api::Response.build(true, message: 'Logged out user.'), status: 200
     else
-      render json: Api::Response.build(false, @user, message: 'Wrong password.'), status: 200
+      render json: Api::Response.build(false, @user, message: 'Wrong password.'), status: 400
     end
   end
 
@@ -42,7 +42,7 @@ class Api::V1::UsersController < Api::BaseController
     # Make sure warden won't do anything
     warden.custom_failure!
 
-    render json: Api::Response.build(false, message: 'Error with your email or password', error_code: "1001"), status: 200
+    render json: Api::Response.build(false, message: 'Error with your email or password', error_code: "1001"), status: 400
   end
 
   def user_params
