@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   api vendor_string: "echo", default_version: 1 do
     version 1 do
       cache as: 'v1' do
-        post 'sign_in' => 'users#sign_in'
-        post 'sign_up' => 'users#sign_up'
-        delete 'sign_out' => 'users#sign_out'
+        post 'sign_in' => 'users#signin'
+        post 'sign_up' => 'users#signup'
+        post 'sign_out' => 'users#signout'
 
         resources :question, :only
       end
