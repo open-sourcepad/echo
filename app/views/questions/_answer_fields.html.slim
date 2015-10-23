@@ -2,7 +2,7 @@
   .col-md-8.no-padding
     = text_field_tag "question[answers_attributes][#{@random_number}][description]", '', class: 'form-control input-lg', placeholder: 'Answer'
   .col-md-3.no-padding-right
-    = button_tag 'Upload Image', class: 'btn btn-default input-lg'
+    = button_tag 'Upload Image', class: 'btn btn-default input-lg upload-image'
     = file_field_tag "question[answers_attributes][#{@random_number}][image]", class: 'hidden'
   .col-md-1
     = link_to '<i class="fa fa-times fa-3x"></i>'.html_safe, 'javascript:void(0)', class: 'remove-answer'
