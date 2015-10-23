@@ -37,7 +37,7 @@ class Answer < ActiveRecord::Base
 
   def feedback_percentage
     if feedback_count > 0
-      (feedback_count/question_feedback_count)*100
+      "#{(feedback_count.to_f/question_feedback_count.to_f).round(2)*100}%"
     else
       '0%'.to_s
     end

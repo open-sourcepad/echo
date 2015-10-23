@@ -1,21 +1,22 @@
-.row
-  .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2.text-center
-    h2= @question.description
-.row
-  .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2.answer-list
-    - @question.answers.each do |answer|
-      div class="#{@question.answers.size == 3 ? 'col-md-4 col-sm-4':'col-md-6 col-sm-6'}"
-        span.text-center
-          = image_tag(answer.image.url(:medium))
-        span.text-center
-          h1= answer.feedback_percentage
+- if @question.present?
+  .row
+    .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2.text-center
+      h2= @question.description
+  .row
+    .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2.answer-list
+      - @question.answers.each do |answer|
+        div class="#{@question.answers.size == 3 ? 'col-md-4 col-sm-4':'col-md-6 col-sm-6'}"
+          span.text-center
+            = image_tag(answer.image.url(:medium))
+          span.text-center
+            h1= answer.feedback_percentage
 
-.row
-  .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
-    = "Date Started: #{@question.created_at.strftime('%B %d, %Y')}"
-.row
-  .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
-    = "Date of Last Response: #{@question.last_response}"
-.row
-  .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
-    = "No. of Responses: #{@question.feedback_count}"
+  .row
+    .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
+      = "Date Started: #{@question.created_at.strftime('%B %d, %Y')}"
+  .row
+    .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
+      = "Date of Last Response: #{@question.last_response}"
+  .row
+    .col-md-6.col-md-offset-2.col-sm-6.col-sm-offset-2
+      = "No. of Responses: #{@question.feedback_count}"
